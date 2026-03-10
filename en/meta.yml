@@ -1,14 +1,36 @@
-title: Project title in sentence case
+---
+title: Talk like a Pirate
 hero_image: images/banner.png
-description: A short description of the project
-listed: false
-pdf: false
+description: Create a web page which can translate normal English text into pirate
+  speak
+original_url: https://raspberrypi.org/learning/talk-like-a-pirate
+theme: red
+duration: 2
+listed: true
+ingredient: false
+copyedit: true
+curriculum: 1, design-0, programming-1, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: html-css-javascript
+site_areas: projects
+hardware: ''
+software: html-css-javascript
+version: 3
+last_tested: 2017-01-01
 steps:
-  - title: What you will make
-  - title: Step title
-    completion:
-      - engaged      
-  - title: Challenge
-    challenge: true
-    completion:
-      - external
+- title: Introduction
+- title: What you will need
+- title: Talk like a Pirate
+- title: Create a web page
+  completion:
+  - engaged
+- title: Add jQuery
+- title: Typing in your text
+- title: Checking the page has loaded
+- title: Change text on key press
+- title: Replace words with pirate words
+- title: Using regular expressions to alter words
+  completion:
+  - internal
+  completion:
+  - external

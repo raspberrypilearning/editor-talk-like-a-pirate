@@ -1,8 +1,3 @@
-## Step title
+## What you will need
 
---- task ---
-
-
---- /task ---
-
-
+- An internet connected computer

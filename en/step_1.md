@@ -1,45 +1,14 @@
 ## What you will make
-OR
-## What you will do - change meta if you use this
+In this resource you will create a web page which can translate normal English text into pirate speak using jQuery and regular expressions.
 
-A brief description - one or two sentences. 
+## What you will learn
+By creating a pirate speech generator with your Raspberry Pi you will learn:
 
---- print-only ---
+- How to use jQuery to cause live updates on a web page
+- How to write regular expressions to match patterns and words
+- How to create a web page to input and output results
 
-![ALT TEXT](images/IMAGE.png)
+This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](https://www.raspberrypi.org/curriculum/):
 
---- /print-only ---
+- [Combine programming constructs to solve a problem](https://www.raspberrypi.org/curriculum/programming/builder)
 
---- no-print ---
-
-[Editor embed](https://editor.raspberrypi.org/en/embed/viewer/project-slug)
-
---- /no-print ---
-
---- no-print ---
-
-Video embed
-
-<video width="640" height="360" controls>
-<source src="images/videoname.mp4" type="video/mp4">
-</video>
-
-Youtube embed 
-<html>
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-<iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/XXXXXXXXX?rel=0&cc_load_policy=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-</iframe>
-</div><br>
-</html>
-
-Scratch embed
-<div class="scratch-preview">
- <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/XXXXXXXXX/?autostart=false" frameborder="0"></iframe>
-</div>
-
---- /no-print ---
-
-### You will need:
-- a
-- b
-- c
