@@ -1,44 +1,45 @@
-## Create a web page
+<h2 class="c-project-heading--task">Copy text as you type</h2>
 
-- Open up a blank file in your chosen text editor and save the file as follows:
+--- task ---
+Replace the alert with a keyup listener so the pirate text box copies whatever you type into the normal text box.
+--- /task ---
 
- -  If you're using **Notepad** on Windows, type the filename in as `index.html` and change the drop-down for the "Save as" type to **All files**.
+<div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
+  <strong>Tip:</strong> <code>.val()</code> reads the text inside a text area, and it can also write new text back into one.
+</div>
 
-  ![Save as HTML using Notepad](images/save-as-html-notepad.png)
+--- task ---
+Update the jQuery code in `index.html`.
 
- - If you're using **TextEdit** on Mac OS, open a new file, then select `Format` > `Make Plain Text`.
+<div class="c-project-code">
 
-  ![Mac make plain text](images/mac-make-plaintext.png)
+--- code ---
+---
+language: html
+filename: index.html
+line_numbers: true
+line_number_start: 13
+line_highlights: 15-19
+---
+  <script>
+    $(function() {
+      $("#normal").on("keyup", function() { // Listen for key presses in the normal text box
+          var words = $("#normal").val(); // Read the text from the normal text box
+          $("#pirate").val(words); // Copy the same text into the pirate text box
+      });
+    });
+  </script>
+--- /code ---
 
-  Make sure you save the file as `index.html`.
+</div>
+--- /task ---
 
-  ![Mac saving as HTML](images/mac-name-file.png)
+<div class="c-project-output">
+<pre>Hello there
 
- - If you're using **Nano** on a Raspberry Pi, open a terminal window, move to the directory in which you wish to create your web page, and type `nano index.html`.
+Hello there</pre>
+</div>
 
-  ![Nano creating HTML](images/pi-html-nano.png)
-
- - Alternatively, you may wish to create this resource entirely within your web browser which you can do using [CodePen](http://codepen.io). Simply open up a new "pen", then **skip the second and third steps**.
-
-
-2. This HTML code gives you the basic structure of a page. Copy and paste the code into the file you created, then save the file.
-
-  ```html
-  <html>
-  <head>
-    <title>My page</title>
-  </head>
-  <body>
-    My content here
-  </body>
-  </html>
-  ```
-
-3. Go to the folder where you saved your web page. Open the file with your internet browser, so now you'll have the same file open in both your text editor and your browser at the same time.
-
-  On Windows, you may need to right-click the file, choose `Open with`, and then select your internet browser.
-
-  ![Open with browser](images/open-with-browser.png)
-
-  Whenever you change the code in your text editor, save it and then press the refresh button on your browser to see the page update.
-
+--- task ---
+**Test:** Type a sentence into the `Landlubbers` box and check that the same sentence appears in the `Pirates` box.
+--- /task ---

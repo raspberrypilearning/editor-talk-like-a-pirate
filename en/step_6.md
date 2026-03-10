@@ -1,63 +1,100 @@
-## Typing in your text
+<h2 class="c-project-heading--task">Use regex for trickier pirate phrases</h2>
 
-- You need to add two `<textarea>` boxes. In one of them you will type in the normal text, while the other displays the pirate speak text. These boxes should appear on the page, so this code goes between the `<body>` and `</body>` tags (or in the HTML box if you are using CodePen).
+--- task ---
+Add regex rules so the translator can change punctuation, word patterns, and the order of some pirate phrases.
+--- /task ---
 
-  This code creates a box called "Landlubbers", which is where we will write our normal text. Notice that it has the **id** value `normal`: we are giving the text box a name so we can refer to it later.
+<style>
+.rpf-tip{
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
 
-  ```html
-  <h2>Landlubbers</h2>
-  <textarea id="normal"></textarea>
-  ```
+.rpf-tip::after{
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  bottom: 125%;
 
-- Using this code as an example, add another box below the first one called "Pirates" and a `<textarea>` with **id** value `pirate` which will contain the pirate speak text.
+  width: max-content;
+  max-width: 38ch;
+  white-space: normal;
 
-- Save the file and refresh your internet browser to check that the textarea boxes appear as expected.
+  padding: .5em .6em;
+  font-size: .85em;
+  line-height: 1.25;
 
-  ![Text area](images/boxes.png)
+  background: #111;
+  color: #fff;
+  border-radius: .35em;
 
-- If you want the textarea boxes to be a bit bigger or to use a different font, you can add CSS code in the `<head>` (or in the CSS section on CodePen) to change the style of the `<textarea>` boxes.
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 9999;
+}
 
-  ```html
-  <style type="text/css">
-    textarea {
-      width: 400px;
-      height: 200px;
-      font-family: arial;
-    }
-  </style>
-  ```
+.rpf-tip::before{
+  content: "";
+  position: absolute;
+  left: 1em;
+  bottom: 115%;
+  border: .4em solid transparent;
+  border-top-color: #111;
 
-  ![Text area](images/bigger-boxes.png)
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 9999;
+}
 
-- Your code so far should look like this if you are using a text editor:
+.rpf-tip:hover::after,
+.rpf-tip:focus::after,
+.rpf-tip:hover::before,
+.rpf-tip:focus::before{
+  opacity: 1;
+  visibility: visible;
+}
+</style>
 
-  ```html
-  <html>
-  <head>
-  <style type="text/css">
-    textarea {
-      width: 400px;
-      height: 200px;
-      font-family: arial;
-    }
-  </style>
+<div class="c-project-callout c-project-callout--debug" style="font-size: 1.1em">
+  <strong>Debug:</strong> The <span class="rpf-tip" tabindex="0"
+      data-tip="^ matches the start of the text, (\\w+)!\\s matches words before an exclamation mark, and (\\w+)ev(\\w+) finds words containing ev.">regex patterns</span> work best when you test with a full sentence such as <code>Hello! I was never ready</code>.
+</div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+--- task ---
+Add the final regex rules to `index.html`.
 
-  </head>
-  <body>
+<div class="c-project-code">
 
-  <h2>Landlubbers</h2>
-  <textarea id="normal"></textarea>
+--- code ---
+---
+language: html
+filename: index.html
+line_numbers: true
+line_number_start: 34
+line_highlights: 36-40
+---
+          words = words.replace(/ yes /gi, " aye ");
 
-  <h2>Pirates</h2>
-  <textarea id="pirate"></textarea>
+          words = words.replace(/^/, "Arr, me hearties. "); // Add a pirate greeting to the start of the text
+          words = words.replace(/(\w+)!\s/g, "$1! Yo ho ho! "); // Add a pirate shout after exclamations
+          words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 "); // Change words like never to ne'er
+          words = words.replace(/was\s(\w+)ed\s/g, "be $1ing "); // Turn was ...ed into be ...ing
+          words = words.replace(/was/gi, "wer"); // Change any remaining was to wer after the regex above
 
-  </body>
-  </html>
-  ```
+          $("#pirate").val(words);
+--- /code ---
 
-  ...or like this if you are using CodePen:
+</div>
+--- /task ---
 
-  ![Intermediate step](images/codepen-intermediate.png)
+<div class="c-project-output">
+  ![The finished pirate translator with converted pirate phrases](images/finished-pirate.png)
+</div>
 
+--- task ---
+**Test:** Type `Hello! I was never ready` and check that the pirate box adds `Arr, me hearties.`, adds `Yo ho ho!`, and changes `never` to `ne'er`.
+--- /task ---
