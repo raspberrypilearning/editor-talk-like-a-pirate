@@ -4,64 +4,8 @@
 Add lots of simple replacement rules so the translator swaps everyday words for pirate ones.
 --- /task ---
 
-<style>
-.rpf-tip{
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted currentColor;
-  cursor: help;
-}
-
-.rpf-tip::after{
-  content: attr(data-tip);
-  position: absolute;
-  left: 0;
-  bottom: 125%;
-
-  width: max-content;
-  max-width: 38ch;
-  white-space: normal;
-
-  padding: .5em .6em;
-  font-size: .85em;
-  line-height: 1.25;
-
-  background: #111;
-  color: #fff;
-  border-radius: .35em;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.rpf-tip::before{
-  content: "";
-  position: absolute;
-  left: 1em;
-  bottom: 115%;
-  border: .4em solid transparent;
-  border-top-color: #111;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.rpf-tip:hover::after,
-.rpf-tip:focus::after,
-.rpf-tip:hover::before,
-.rpf-tip:focus::before{
-  opacity: 1;
-  visibility: visible;
-}
-</style>
-
 <div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
-  <strong>Tip:</strong> The <span class="rpf-tip" tabindex="0"
-      data-tip="g replaces every match in the text, and i ignores capital letters."><code>g</code> and <code>i</code> flags</span> make one rule work in more situations.
+  <strong>Tip:</strong> The <code>g</code> and <code>i</code> flags make one rule work in more situations. <code>g</code> replaces every match in the text, and <code>i</code> ignores capital letters.
 </div>
 
 --- task ---
