@@ -1,19 +1,10 @@
----
 title: Talk like a Pirate
+meta_title: Make your own webpage | Learn web development | Pirate Translator
+meta_description: Make your own webpage and learn web development with the Raspberry Pi Foundation. Use HTML and JQuery to create a funny pirate translator.
 hero_image: images/banner.png
 description: Create a web page which can translate normal English text into pirate speak.
-original_url: https://raspberrypi.org/learning/editor-talk-like-a-pirate
-theme: red
-duration: 2
 listed: false
-ingredient: false
 copyedit: true
-curriculum: 1, design-0, programming-1, phys-comp-0, manufacture-0, community-0
-interests: ''
-technologies: html-css-javascript
-site_areas: projects
-hardware: ''
-software: html-css-javascript
 version: 3
 last_tested: 2017-01-01
 steps:
