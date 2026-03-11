@@ -4,64 +4,8 @@
 Add regex rules so the translator can change punctuation, word patterns, and the order of some pirate phrases.
 --- /task ---
 
-<style>
-.rpf-tip{
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted currentColor;
-  cursor: help;
-}
-
-.rpf-tip::after{
-  content: attr(data-tip);
-  position: absolute;
-  left: 0;
-  bottom: 125%;
-
-  width: max-content;
-  max-width: 38ch;
-  white-space: normal;
-
-  padding: .5em .6em;
-  font-size: .85em;
-  line-height: 1.25;
-
-  background: #111;
-  color: #fff;
-  border-radius: .35em;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.rpf-tip::before{
-  content: "";
-  position: absolute;
-  left: 1em;
-  bottom: 115%;
-  border: .4em solid transparent;
-  border-top-color: #111;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.rpf-tip:hover::after,
-.rpf-tip:focus::after,
-.rpf-tip:hover::before,
-.rpf-tip:focus::before{
-  opacity: 1;
-  visibility: visible;
-}
-</style>
-
 <div class="c-project-callout c-project-callout--debug" style="font-size: 1.1em">
-  <strong>Debug:</strong> The <span class="rpf-tip" tabindex="0"
-      data-tip="^ matches the start of the text, (\\w+)!\\s matches words before an exclamation mark, and (\\w+)ev(\\w+) finds words containing ev.">regex patterns</span> work best when you test with a full sentence such as <code>Hello! I was never ready</code>.
+  <strong>Debug:</strong> The regex patterns work best when you test with a full sentence such as <code>Hello! I was never ready</code>. For example, <code>^</code> matches the start of the text, <code>(\\w+)!\\s</code> matches words before an exclamation mark, and <code>(\\w+)ev(\\w+)</code> finds words containing <code>ev</code>.
 </div>
 
 --- task ---
