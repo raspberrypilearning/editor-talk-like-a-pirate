@@ -22,7 +22,7 @@ line_number_start: 11
 line_highlights: 12-17
 ---
   <title>Talk like a Pirate</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- Load the current jQuery library -->
+  <script src="https://rpf.io/piratetalk"></script> <!-- Load the current jQuery library -->
   <script>
     $(function() { // Run the code after jQuery knows the page is ready
       alert("Page has loaded"); // Show a message when the page is ready
