@@ -9,12 +9,14 @@
   }
 </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
-$(function(){
-    $("#normal").on("keyup", function(){
+document.addEventListener("DOMContentLoaded", function () {
+    var normal = document.getElementById("normal");
+    var pirate = document.getElementById("pirate");
 
-        var words = $("#normal").val();
+    normal.addEventListener("keyup", function () {
+
+        var words = normal.value;
 
         // Always replace some words with pirate words
         words = words.replace(/ar/gi, "arrr");
@@ -48,7 +50,7 @@ $(function(){
         words = words.replace(/was/gi, "wer");
 
 
-        $("#pirate").val(words);
+        pirate.value = words;
 
     });
 });
