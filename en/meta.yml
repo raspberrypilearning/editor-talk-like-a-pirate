@@ -3,7 +3,7 @@ meta_title: Make your own webpage | Learn web development | Pirate Translator
 meta_description: Make your own webpage and learn web development with the Raspberry Pi Foundation. Use HTML and JQuery to create a funny pirate translator.
 hero_image: images/banner.png
 description: Create a web page which can translate normal English text into pirate speak.
-listed: true
+listed: false
 copyedit: true
 version: 4
 last_tested: 2026-03-11
