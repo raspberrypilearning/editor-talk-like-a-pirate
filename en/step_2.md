@@ -1,15 +1,14 @@
-<h2 class="c-project-heading--task">Create the page layout</h2>
+<h2 class="c-project-heading--task">Load jQuery when the page opens</h2>
 
---- task ---
-Update the starter code so the page has two text areas for normal text and pirate text.
---- /task ---
+### Step 1
+Add jQuery and a ready event so you can confirm your page runs JavaScript after it has loaded.
 
-<div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
-  <strong>Tip:</strong> The <code>id</code> names <code>normal</code> and <code>pirate</code> are important because your script will use them later. An <code>id</code> lets jQuery target one specific element.
+<div class="c-project-callout c-project-callout--debug" style="font-size: 1.1em">
+  <strong>Debug:</strong> If no pop-up appears, refresh the page and check that the jQuery <code>script src</code> line is inside the <code>&lt;head&gt;</code> section.
 </div>
 
---- task ---
-Update `index.html` in the starter project.
+### Step 2
+Update `index.html` to load jQuery and show an alert when the page is ready.
 
 <div class="c-project-code">
 
@@ -18,40 +17,24 @@ Update `index.html` in the starter project.
 language: html
 filename: index.html
 line_numbers: true
-line_number_start: 1
-line_highlights: 1,4-11,15-19
+line_number_start: 11
+line_highlights: 12-17
 ---
-<!DOCTYPE html>
-<html>
-<head>
-<style type="text/css">
-  textarea {
-    width: 400px; /* Make the text areas wider */
-    height: 200px; /* Make the text areas taller */
-    font-family: arial; /* Use a simple readable font */
-  }
-</style>
-  <title>Talk like a Pirate</title> <!-- Update the page title -->
+  <title>Talk like a Pirate</title>
+  <script src="https://rpf.io/piratetalk"></script> <!-- Load the current jQuery library -->
+  <script>
+    $(function() { // Run the code after jQuery knows the page is ready
+      alert("Page has loaded"); // Show a message when the page is ready
+    });
+  </script>
 </head>
-<body>
-
-<h2>Landlubbers</h2> <!-- Label the normal text box -->
-<textarea id="normal"></textarea> <!-- Create the input text area -->
-
-<h2>Pirates</h2> <!-- Label the pirate text box -->
-<textarea id="pirate"></textarea> <!-- Create the output text area -->
-
-</body>
-</html>
 --- /code ---
 
 </div>
---- /task ---
 
 <div class="c-project-output">
-  ![Two text areas labelled Landlubbers and Pirates on the page](images/boxes.png)
+  ![A browser alert that says Page has loaded](images/page-has-loaded.png)
 </div>
 
---- task ---
-**Test:** Open `index.html` in a browser and check that you can see a title and two large text boxes.
---- /task ---
+### Step 3
+**Test:** Refresh the page and check that a pop-up says `Page has loaded`.

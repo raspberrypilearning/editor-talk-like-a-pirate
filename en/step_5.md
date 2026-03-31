@@ -1,15 +1,14 @@
-<h2 class="c-project-heading--task">Add pirate word replacements</h2>
+<h2 class="c-project-heading--task">Use regex for trickier pirate phrases</h2>
 
---- task ---
-Add lots of simple replacement rules so the translator swaps everyday words for pirate ones.
---- /task ---
+### Step 1
+Add regex rules so the translator can change punctuation, word patterns, and the order of some pirate phrases.
 
-<div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
-  <strong>Tip:</strong> The <code>g</code> and <code>i</code> flags make one rule work in more situations. <code>g</code> replaces every match in the text, and <code>i</code> ignores capital letters.
+<div class="c-project-callout c-project-callout--debug" style="font-size: 1.1em">
+  <strong>Debug:</strong> The regex patterns work best when you test with a full sentence such as <code>Hello! I was never ready</code>. For example, <code>^</code> matches the start of the text, <code>(\\w+)!\\s</code> matches words before an exclamation mark, and <code>(\\w+)ev(\\w+)</code> finds words containing <code>ev</code>.
 </div>
 
---- task ---
-Add the main pirate word replacements to `index.html`.
+### Step 2
+Add the final regex rules to `index.html`.
 
 <div class="c-project-code">
 
@@ -18,41 +17,25 @@ Add the main pirate word replacements to `index.html`.
 language: html
 filename: index.html
 line_numbers: true
-line_number_start: 15
-line_highlights: 18-34
+line_number_start: 34
+line_highlights: 36-40
 ---
-      $("#normal").on("keyup", function() {
-          var words = $("#normal").val();
+          words = words.replace(/ yes /gi, " aye ");
 
-          words = words.replace(/ar/gi, "arrr"); // Stretch ar sounds to sound more pirate-like
-          words = words.replace(/you/gi, "ye"); // Change you to ye
-          words = words.replace(/your/gi, "yer"); // Change your to yer
-          words = words.replace(/ for /g, " fer "); // Change for to fer
-          words = words.replace(/ to /gi, " ter "); // Change to to ter
-          words = words.replace(/ing/g, "in'"); // Drop the g from words ending in ing
-          words = words.replace(/are/g, "be"); // Change are to be
-          words = words.replace(/ is /g, " be "); // Change is to be
-          words = words.replace(/was/g, "be"); // Change was to be
-          words = words.replace(/the /g, "th'"); // Shorten the
-          words = words.replace(/hello/gi, "Ahoy"); // Change hello to Ahoy
-          words = words.replace(/stop/gi, "avast"); // Change stop to avast
-          words = words.replace(/quickly/gi, "smartly"); // Change quickly to smartly
-          words = words.replace(/friend/gi, "matey"); // Change friend to matey
-          words = words.replace(/beer/gi, "grog"); // Change beer to grog
-          words = words.replace(/I'm/g, "I be"); // Change I'm to I be
-          words = words.replace(/ yes /gi, " aye "); // Change yes to aye
+          words = words.replace(/^/, "Arr, me hearties. "); // Add a pirate greeting to the start of the text
+          words = words.replace(/(\w+)!\s/g, "$1! Yo ho ho! "); // Add a pirate shout after exclamations
+          words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 "); // Change words like never to ne'er
+          words = words.replace(/was\s(\w+)ed\s/g, "be $1ing "); // Turn was ...ed into be ...ing
+          words = words.replace(/was/gi, "wer"); // Change any remaining was to wer after the regex above
 
           $("#pirate").val(words);
-      });
 --- /code ---
 
 </div>
---- /task ---
 
 <div class="c-project-output">
-  ![The word hello changes to ahoy in the pirate text box](images/ahoy-there.png)
+  ![The finished pirate translator with converted pirate phrases](images/finished-pirate.png)
 </div>
 
---- task ---
-**Test:** Type `Hello, you and your friend should stop for beer.` and check that the pirate box changes several words, including `Ahoy`, `ye`, `yer`, `matey`, `avast`, and `grog`.
---- /task ---
+### Step 3
+**Test:** Type `Hello! I was never ready` and check that the pirate box adds `Arr, me hearties.`, adds `Yo ho ho!`, and changes `never` to `ne'er`.

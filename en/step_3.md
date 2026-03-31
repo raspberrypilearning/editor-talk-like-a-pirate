@@ -1,15 +1,14 @@
-<h2 class="c-project-heading--task">Load jQuery when the page opens</h2>
+<h2 class="c-project-heading--task">Copy text as you type</h2>
 
---- task ---
-Add jQuery and a ready event so you can confirm your page runs JavaScript after it has loaded.
---- /task ---
+### Step 1
+Replace the alert with a keyup listener so the pirate text box copies whatever you type into the normal text box.
 
-<div class="c-project-callout c-project-callout--debug" style="font-size: 1.1em">
-  <strong>Debug:</strong> If no pop-up appears, refresh the page and check that the jQuery <code>script src</code> line is inside the <code>&lt;head&gt;</code> section.
+<div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
+  <strong>Tip:</strong> <code>.val()</code> reads the text inside a text area, and it can also write new text back into one.
 </div>
 
---- task ---
-Update `index.html` to load jQuery and show an alert when the page is ready.
+### Step 2
+Update the jQuery code in `index.html`.
 
 <div class="c-project-code">
 
@@ -18,26 +17,26 @@ Update `index.html` to load jQuery and show an alert when the page is ready.
 language: html
 filename: index.html
 line_numbers: true
-line_number_start: 11
-line_highlights: 12-17
+line_number_start: 13
+line_highlights: 15-19
 ---
-  <title>Talk like a Pirate</title>
-  <script src="https://rpf.io/piratetalk"></script> <!-- Load the current jQuery library -->
   <script>
-    $(function() { // Run the code after jQuery knows the page is ready
-      alert("Page has loaded"); // Show a message when the page is ready
+    $(function() {
+      $("#normal").on("keyup", function() { // Listen for key presses in the normal text box
+          var words = $("#normal").val(); // Read the text from the normal text box
+          $("#pirate").val(words); // Copy the same text into the pirate text box
+      });
     });
   </script>
-</head>
 --- /code ---
 
 </div>
---- /task ---
 
 <div class="c-project-output">
-  ![A browser alert that says Page has loaded](images/page-has-loaded.png)
+<pre>Hello there
+
+Hello there</pre>
 </div>
 
---- task ---
-**Test:** Refresh the page and check that a pop-up says `Page has loaded`.
---- /task ---
+### Step 3
+**Test:** Type a sentence into the `Landlubbers` box and check that the same sentence appears in the `Pirates` box.
