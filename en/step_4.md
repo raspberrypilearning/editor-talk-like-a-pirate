@@ -1,15 +1,14 @@
-<h2 class="c-project-heading--task">Copy text as you type</h2>
+<h2 class="c-project-heading--task">Add pirate word replacements</h2>
 
---- task ---
-Replace the alert with a keyup listener so the pirate text box copies whatever you type into the normal text box.
---- /task ---
+### Step 1
+Add lots of simple replacement rules so the translator swaps everyday words for pirate ones.
 
 <div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
-  <strong>Tip:</strong> <code>.val()</code> reads the text inside a text area, and it can also write new text back into one.
+  <strong>Tip:</strong> The <code>g</code> and <code>i</code> flags make one rule work in more situations. <code>g</code> replaces every match in the text, and <code>i</code> ignores capital letters.
 </div>
 
---- task ---
-Update the jQuery code in `index.html`.
+### Step 2
+Add the main pirate word replacements to `index.html`.
 
 <div class="c-project-code">
 
@@ -18,28 +17,39 @@ Update the jQuery code in `index.html`.
 language: html
 filename: index.html
 line_numbers: true
-line_number_start: 13
-line_highlights: 15-19
+line_number_start: 15
+line_highlights: 18-34
 ---
-  <script>
-    $(function() {
-      $("#normal").on("keyup", function() { // Listen for key presses in the normal text box
-          var words = $("#normal").val(); // Read the text from the normal text box
-          $("#pirate").val(words); // Copy the same text into the pirate text box
+      $("#normal").on("keyup", function() {
+          var words = $("#normal").val();
+
+          words = words.replace(/ar/gi, "arrr"); // Stretch ar sounds to sound more pirate-like
+          words = words.replace(/you/gi, "ye"); // Change you to ye
+          words = words.replace(/your/gi, "yer"); // Change your to yer
+          words = words.replace(/ for /g, " fer "); // Change for to fer
+          words = words.replace(/ to /gi, " ter "); // Change to to ter
+          words = words.replace(/ing/g, "in'"); // Drop the g from words ending in ing
+          words = words.replace(/are/g, "be"); // Change are to be
+          words = words.replace(/ is /g, " be "); // Change is to be
+          words = words.replace(/was/g, "be"); // Change was to be
+          words = words.replace(/the /g, "th'"); // Shorten the
+          words = words.replace(/hello/gi, "Ahoy"); // Change hello to Ahoy
+          words = words.replace(/stop/gi, "avast"); // Change stop to avast
+          words = words.replace(/quickly/gi, "smartly"); // Change quickly to smartly
+          words = words.replace(/friend/gi, "matey"); // Change friend to matey
+          words = words.replace(/beer/gi, "grog"); // Change beer to grog
+          words = words.replace(/I'm/g, "I be"); // Change I'm to I be
+          words = words.replace(/ yes /gi, " aye "); // Change yes to aye
+
+          $("#pirate").val(words);
       });
-    });
-  </script>
 --- /code ---
 
 </div>
---- /task ---
 
 <div class="c-project-output">
-<pre>Hello there
-
-Hello there</pre>
+  ![The word hello changes to ahoy in the pirate text box](images/ahoy-there.png)
 </div>
 
---- task ---
-**Test:** Type a sentence into the `Landlubbers` box and check that the same sentence appears in the `Pirates` box.
---- /task ---
+### Step 3
+**Test:** Type `Hello, you and your friend should stop for beer.` and check that the pirate box changes several words, including `Ahoy`, `ye`, `yer`, `matey`, `avast`, and `grog`.
