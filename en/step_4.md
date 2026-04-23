@@ -1,13 +1,17 @@
 <h2 class="c-project-heading--task">Add pirate word replacements</h2>
 
-### Step 1
 Add lots of simple replacement rules so the translator swaps everyday words for pirate ones.
+
+<h2 class="c-project-heading--explainer">Follow these instructions</h2>
+
+## Step 1
 
 <div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
   <strong>Tip:</strong> The <code>g</code> and <code>i</code> flags make one rule work in more situations. <code>g</code> replaces every match in the text, and <code>i</code> ignores capital letters.
 </div>
 
-### Step 2
+## Step 2
+
 Add the main pirate word replacements to `index.html`.
 
 <div class="c-project-code">
@@ -51,5 +55,6 @@ line_highlights: 18-34
   ![The word hello changes to ahoy in the pirate text box](images/ahoy-there.png)
 </div>
 
-### Step 3
-**Test:** Type `Hello, you and your friend should stop for beer.` and check that the pirate box changes several words, including `Ahoy`, `ye`, `yer`, `matey`, `avast`, and `grog`.
+## Now run your code
+
+Type `Hello, you and your friend should stop for beer.` and check that the pirate box changes several words, including `Ahoy`, `ye`, `yer`, `matey`, `avast`, and `grog`.
