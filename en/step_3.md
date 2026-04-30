@@ -1,13 +1,17 @@
 <h2 class="c-project-heading--task">Copy text as you type</h2>
 
-### Step 1
 Replace the alert with a keyup listener so the pirate text box copies whatever you type into the normal text box.
+
+<h2 class="c-project-heading--explainer">Follow these instructions</h2>
+
+## Step 1
 
 <div class="c-project-callout c-project-callout--tip" style="font-size: 1.1em">
   <strong>Tip:</strong> <code>.val()</code> reads the text inside a text area, and it can also write new text back into one.
 </div>
 
-### Step 2
+## Step 2
+
 Update the jQuery code in `index.html`.
 
 <div class="c-project-code">
@@ -38,5 +42,6 @@ line_highlights: 15-19
 Hello there</pre>
 </div>
 
-### Step 3
-**Test:** Type a sentence into the `Landlubbers` box and check that the same sentence appears in the `Pirates` box.
+## Now run your code
+
+Type a sentence into the `Landlubbers` box and check that the same sentence appears in the `Pirates` box.
